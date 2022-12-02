@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+
+import AddItems from './Components/Add Items/AddItems';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Homepage from './Components/Homepage/Homepage';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <BrowserRouter>
+   <Routes>
+
+    <Route path="/" element={<Homepage/>}/>
+
+    <Route path="/dashboard" element={<Dashboard/>}/>
+
+    <Route path="/AddItems" element={<AddItems/>}></Route>
+
+
+   </Routes>
+   {/* <Homepage/> */}
+   {/* <Dashboard/> */}
+   {/* <AddItems/> */}
+   </BrowserRouter> 
+
+// <Heading>Hello React !!</Heading>
+// <Routes>
+//   <Route path='/' element = {<Register/>}/>
+//   <Route path='/Register' element = {<Register/>}/>
+//   <Route path='/login' element = {<Login/>}/>
+//   <Route path= '/Books' element = {<Books/>}/>
+//   <Route path="/CreateBooks" element = {<CreateBooks/>}/>
+//   <Route path="/GetBooks" element = {<GetBooks/>}/>
+//   <Route path="/UpdateBooks" element = {<UpdateBooks/>}/>
+//   <Route path="/DeleteBooks" element = {<DeleteBooks/>}/>
+//   {/* <Route path='/contacts' element = {<div>Contact page</div>}/> */}
+// </Routes>
+// </BrowserRouter>
 }
 
 export default App;
